@@ -1,15 +1,13 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-courses',
-  templateUrl: './courses.component.html',
-  styleUrls: ['./courses.component.css']
+  selector: 'courses',
+  template: '<h2>{{ getTitle() }}</h2>'
 })
-export class CoursesComponent implements OnInit {
+export class CoursesComponent {
+  title = "List of courses";
 
-  constructor() { }
-
-  ngOnInit(): void {
+  getTitle() {
+    return this.title; 
   }
-
 }
