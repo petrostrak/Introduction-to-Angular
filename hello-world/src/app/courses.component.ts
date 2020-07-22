@@ -14,7 +14,7 @@ import { Component } from '@angular/core';
                 <td [attr.colspan]="colSpan"></td>
             </tr>
         </table>
-        <button class="btn btn-primary">Save</button>
+        <button class="btn btn-primary" [class.active]="isActive">Save</button>
     `
 })
 export class CoursesComponent {
@@ -22,6 +22,7 @@ export class CoursesComponent {
     courses;
     imageUrl = "https://i.pinimg.com/originals/44/8e/86/448e862e9801febb2fbc65c4d73adfec.jpg";
     colSpan = 2;
+    isActive = true;
 
     constructor(service: CoursesService){
         this.courses = service.getCourses();
