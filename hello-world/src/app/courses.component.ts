@@ -23,6 +23,7 @@ import { Component } from '@angular/core';
         </div>
         <input (keyup.enter)="onKeyUp($event)" />
         <input [value]="email" (keyup.enter)="email = $event.target.value; onKeyUp2()" />
+        <input [(ngModel)]="email" (keyup.enter)="onKeyUp3()" />
     `
 })
 export class CoursesComponent {
@@ -47,6 +48,10 @@ export class CoursesComponent {
     }
 
     onKeyUp2(){
+        console.log(this.email)
+    }
+
+    onKeyUp3(){
         console.log(this.email)
     }
 
