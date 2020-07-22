@@ -21,6 +21,7 @@ import { Component } from '@angular/core';
                     (click)="onSave($event)">Save
             </button>
         </div>
+        <input (keyup.enter)="onKeyUp()" />
     `
 })
 export class CoursesComponent {
@@ -30,13 +31,17 @@ export class CoursesComponent {
     colSpan = 2;
     isActive = true;
 
-    onSave($event) {
+    onSave($event){
         $event.stopPropagation();
         console.log('Button was clicked', $event)
     }
 
     onDivClick(){
         console.log('Div was clicked')
+    }
+
+    onKeyUp(){
+        console.log('Enter was pressed')
     }
 
     constructor(service: CoursesService) {
