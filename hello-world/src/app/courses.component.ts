@@ -14,7 +14,13 @@ import { Component } from '@angular/core';
                 <td [attr.colspan]="colSpan"></td>
             </tr>
         </table>
-        <button class="btn btn-primary" [class.active]="isActive" [style.background]="isActive ? 'green' : 'red'">Save</button>
+        <div (click)="onDivClick()">
+            <button class="btn btn-primary" 
+                    [class.active]="isActive" 
+                    [style.background]="isActive ? 'green' : 'red'"
+                    (click)="onSave($event)">Save
+            </button>
+        </div>
     `
 })
 export class CoursesComponent {
@@ -24,7 +30,16 @@ export class CoursesComponent {
     colSpan = 2;
     isActive = true;
 
-    constructor(service: CoursesService){
+    onSave($event) {
+        $event.stopPropagation();
+        console.log('Button was clicked', $event)
+    }
+
+    onDivClick(){
+        console.log('Div was clicked')
+    }
+
+    constructor(service: CoursesService) {
         this.courses = service.getCourses();
     }
 }
