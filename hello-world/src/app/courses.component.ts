@@ -9,12 +9,18 @@ import { Component } from '@angular/core';
             {{ course }}
         </ul>
         <img src="{{ imageUrl }}" />
+        <table>
+            <tr>
+                <td [attr.colspan]="colSpan"></td>
+            </tr>
+        </table>
     `
 })
 export class CoursesComponent {
     title = "List of courses";
     courses;
     imageUrl = "https://i.pinimg.com/originals/44/8e/86/448e862e9801febb2fbc65c4d73adfec.jpg";
+    colSpan = 2;
 
     constructor(service: CoursesService){
         this.courses = service.getCourses();
