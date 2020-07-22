@@ -21,7 +21,8 @@ import { Component } from '@angular/core';
                     (click)="onSave($event)">Save
             </button>
         </div>
-        <input (keyup.enter)="onKeyUp()" />
+        <input (keyup.enter)="onKeyUp($event)" />
+        <input #email (keyup.enter)="onKeyUp2(email.value)" />
     `
 })
 export class CoursesComponent {
@@ -40,8 +41,12 @@ export class CoursesComponent {
         console.log('Div was clicked')
     }
 
-    onKeyUp(){
-        console.log('Enter was pressed')
+    onKeyUp($event){
+        console.log($event.target.value)
+    }
+
+    onKeyUp2(email){
+        console.log(email)
     }
 
     constructor(service: CoursesService) {
