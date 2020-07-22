@@ -14,7 +14,7 @@ import { Component } from '@angular/core';
                 <td [attr.colspan]="colSpan"></td>
             </tr>
         </table>
-        <button class="btn btn-primary" [class.active]="isActive">Save</button>
+        <button class="btn btn-primary" [class.active]="isActive" [style.background]="isActive ? 'green' : 'red'">Save</button>
     `
 })
 export class CoursesComponent {
