@@ -22,7 +22,7 @@ import { Component } from '@angular/core';
             </button>
         </div>
         <input (keyup.enter)="onKeyUp($event)" />
-        <input #email (keyup.enter)="onKeyUp2(email.value)" />
+        <input [value]="email" (keyup.enter)="email = $event.target.value; onKeyUp2()" />
     `
 })
 export class CoursesComponent {
@@ -31,6 +31,7 @@ export class CoursesComponent {
     imageUrl = "https://i.pinimg.com/originals/44/8e/86/448e862e9801febb2fbc65c4d73adfec.jpg";
     colSpan = 2;
     isActive = true;
+    email = "pit.trak@gmail.com"
 
     onSave($event){
         $event.stopPropagation();
@@ -45,8 +46,8 @@ export class CoursesComponent {
         console.log($event.target.value)
     }
 
-    onKeyUp2(email){
-        console.log(email)
+    onKeyUp2(){
+        console.log(this.email)
     }
 
     constructor(service: CoursesService) {
