@@ -1,3 +1,4 @@
+import { SummaryPipe } from './summery.pipe';
 import { CoursesService } from './courses.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -12,7 +13,8 @@ import { CoursesComponent } from './courses.component';
   declarations: [
     AppComponent,
     CourseComponent,
-    CoursesComponent
+    CoursesComponent,
+    SummaryPipe
   ],
   imports: [
     BrowserModule,

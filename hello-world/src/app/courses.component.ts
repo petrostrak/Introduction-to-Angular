@@ -13,6 +13,7 @@ import { Component } from '@angular/core';
         {{ course.rating | number:'1.2-2' }} <br/>
         {{ course.price | currency:'EUR'}} <br/>
         {{ course.releaseDate | date:'shortDate' }} <br/>
+        {{ text | summary:'10' }} <br/>
         <img src="{{ imageUrl }}" />
         <table>
             <tr>
@@ -40,6 +41,7 @@ export class CoursesComponent {
         price: 190.95,
         releaseDate: new Date(2016, 3, 1)
     }
+    text = `Lorem ipsum, or lipsum as it is sometimes known, is dummy text used in laying out print, graphic or web designs. The passage is attributed to an unknown typesetter in the 15th century who is thought to have scrambled parts of Cicero's De Finibus Bonorum et Malorum for use in a type specimen book.`
     imageUrl = "https://i.pinimg.com/originals/44/8e/86/448e862e9801febb2fbc65c4d73adfec.jpg";
     colSpan = 2;
     isActive = true;
