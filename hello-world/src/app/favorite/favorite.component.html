@@ -1,1 +1,5 @@
-<favorite [isFavorite]="post.isFavorite"></favorite>
+<span>
+    class="glyphicon"
+    [class.glyphicon-star]="isFavorite"
+    [class.glyphicon-star-empty]="!isFavorite"
+</span>
