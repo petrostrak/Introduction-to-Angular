@@ -8,6 +8,11 @@ import { Component } from '@angular/core';
         <ul *ngFor="let course of courses">
             {{ course }}
         </ul>
+        {{ course.title | uppercase }} <br/>
+        {{ course.students | number }} <br/>
+        {{ course.rating | number:'1.2-2' }} <br/>
+        {{ course.price | currency:'EUR'}} <br/>
+        {{ course.releaseDate | date:'shortDate' }} <br/>
         <img src="{{ imageUrl }}" />
         <table>
             <tr>
@@ -28,7 +33,13 @@ import { Component } from '@angular/core';
 })
 export class CoursesComponent {
     title = "List of courses";
-    courses;
+    course = {
+        title: "The complete angular course",
+        rating: 4.9234,
+        students: 30123,
+        price: 190.95,
+        releaseDate: new Date(2016, 3, 1)
+    }
     imageUrl = "https://i.pinimg.com/originals/44/8e/86/448e862e9801febb2fbc65c4d73adfec.jpg";
     colSpan = 2;
     isActive = true;
